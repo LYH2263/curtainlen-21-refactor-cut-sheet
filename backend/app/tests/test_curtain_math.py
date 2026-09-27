@@ -5,6 +5,8 @@ def test_living_room():
     assert r["panels"] == 5
     assert r["cut_height"] == 2.85
     assert r["meters"] == 14.25
+    assert len(r["cut_sheet"]) == r["panels"]
+    assert r["cut_sheet"][-1]["running_meters"] == r["meters"]
 
 def test_single_panel_narrow():
     r = fabric_meters(1.0, 2.0, 1.5, 0.0, 0.0, 2.8)
